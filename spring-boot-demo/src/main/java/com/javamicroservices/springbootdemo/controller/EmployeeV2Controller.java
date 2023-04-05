@@ -2,7 +2,6 @@ package com.javamicroservices.springbootdemo.controller;
 
 import com.javamicroservices.springbootdemo.model.Employee;
 import com.javamicroservices.springbootdemo.service.EmployeeService;
-import com.javamicroservices.springbootdemo.service.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/employee")
-public class EmployeeController {
+@RequestMapping("/v2/employee")
+public class EmployeeV2Controller {
     @Autowired
-    @Qualifier("employeeServiceImpl")
+    @Qualifier("employeeV2ServiceImpl")
     private EmployeeService employeeService;
 
     @PostMapping

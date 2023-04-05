@@ -1,10 +1,13 @@
-package com.javamicroservices.springbootdemo.model;
+package com.javamicroservices.springbootdemo.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-//@JsonIgnoreProperties({"department"})
-public class Employee {
+@Entity
+@Table(name = "tbl_employee")
+public class EmployeeEntity {
+    @Id
     private String employeeId;
     private String firstName;
     private String lastName;
