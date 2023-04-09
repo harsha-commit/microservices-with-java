@@ -18,11 +18,15 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public long addProduct(ProductRequest productRequest) {
         log.info("Adding Product...");
+
+        // model -> entity
         Product product = Product.builder()
                 .productName(productRequest.getName())
                 .price(productRequest.getPrice())
                 .quantity(productRequest.getQuantity())
                 .build();
+
+        // saving to database
         productRepository.save(product);
         log.info("Product "+ product.getProductName()+ " with id: " + product.getProductId() + " is created");
         return product.getProductId();
@@ -31,8 +35,13 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public ProductResponse getProductById(long id) {
         log.info("Fetching the product with id: {}", id);
+
+        // finding the product with exception handling
         Product product =  productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("No such product with given id exists", "NOT_FOUND"));
         ProductResponse productResponse = new ProductResponse();
+
+        // entity -> model
+        // for BeanUtils.copyProperties -> variable names should be same
         BeanUtils.copyProperties(product, productResponse);
         return productResponse;
     }

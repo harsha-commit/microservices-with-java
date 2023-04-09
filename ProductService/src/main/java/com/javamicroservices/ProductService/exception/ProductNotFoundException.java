@@ -8,6 +8,7 @@ public class ProductNotFoundException extends RuntimeException{
     private String errorCode;
 
     public ProductNotFoundException(String message, String errorCode){
+        // initializes the message field of the exception
         super(message);
         this.errorCode = errorCode;
     }

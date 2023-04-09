@@ -16,12 +16,14 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    // for adding a product to database
     @PostMapping
     public ResponseEntity<Long> addProduct(@RequestBody ProductRequest productRequest){
         long productId = productService.addProduct(productRequest);
         return new ResponseEntity<>(productId, HttpStatus.CREATED);
     }
 
+    // for getting a product by ID
     @GetMapping("/{id}")
     public ResponseEntity<ProductResponse> getProductById(@PathVariable long id){
         ProductResponse productResponse = productService.getProductById(id);
