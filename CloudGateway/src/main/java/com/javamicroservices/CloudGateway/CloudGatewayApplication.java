@@ -1,13 +1,13 @@
-package com.javamicroservices.springbootdemo;
+package com.javamicroservices.CloudGateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootDemoApplication {
+public class CloudGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoApplication.class, args);
+		SpringApplication.run(CloudGatewayApplication.class, args);
 	}
 
 }

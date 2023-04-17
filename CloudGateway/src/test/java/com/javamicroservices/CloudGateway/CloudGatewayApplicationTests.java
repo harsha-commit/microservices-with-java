@@ -1,10 +1,10 @@
-package com.javamicroservices.springbootdemo;
+package com.javamicroservices.CloudGateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootDemoApplicationTests {
+class CloudGatewayApplicationTests {
 
 	@Test
 	void contextLoads() {
